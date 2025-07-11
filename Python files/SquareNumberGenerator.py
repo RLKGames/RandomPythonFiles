@@ -20,7 +20,6 @@ with open(filePath2,"a") as f:
         print(output)
         f.write(output + "\n")
     endTime = time.perf_counter()
-    timeElapsed = endTime - startTime
-    timeElapsed = round(timeElapsed,2)
+    timeElapsed = round(endTime - startTime,2)
     print("Time taken: " + str(timeElapsed) + "s")
     f.write("Time taken: " + str(timeElapsed) + "s")
