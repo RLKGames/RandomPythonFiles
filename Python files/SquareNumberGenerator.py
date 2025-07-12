@@ -1,22 +1,22 @@
 import datetime
 import time
+import math
 
-dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-filePath = "SquareNumberGeneratorOutput-" + str(dateTimeNow)
-filePath2 = filePath + ".txt"
-filePath2 = filePath2.replace(":","-")
-filePath2 = filePath2.replace(" ","-")
+dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+filePath = "SquareNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
 
-with open(filePath2,"a") as f:
-    lowestNum = int(input("What is the lowest number you would like to check? "))
-    highestNum = int(input("What is the highest number you would like to check? "))
-    startTime = time.perf_counter()
+lowestNum = int(input("What is the lowest number you would like to check? "))
+highestNum = int(input("What is the highest number you would like to check? "))
+startTime = time.perf_counter()
+
+with open(filePath,"a") as f:
     for numChecking in range(lowestNum,highestNum+1):
-        for numAgainst in range(1,numChecking+1):
-            if numChecking / numAgainst == numAgainst:
-                output = str(numChecking) + " is a square number"
-            else:
-                output = str(numChecking) + " is not a square number"
+        sqroot = math.sqrt(numChecking)
+        intsqroot = int(sqroot)
+        if intsqroot == sqroot:
+            output = str(numChecking) + " is a square number"
+        else:
+            output = str(numChecking) + " is not a square number"
         print(output)
         f.write(output + "\n")
     endTime = time.perf_counter()
