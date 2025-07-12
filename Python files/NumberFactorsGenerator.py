@@ -1,13 +1,10 @@
 import datetime
 import time
 
-dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-filePath = "PrimeNumberGeneratorOutput-" + str(dateTimeNow)
-filePath2 = filePath + ".txt"
-filePath2 = filePath2.replace(":","-")
-filePath2 = filePath2.replace(" ","-")
+dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+filePath = "NumberFactorsGeneratorOutput-" + str(dateTimeNow) + ".txt"
 
-with open(filePath2,"a") as f:
+with open(filePath,"a") as f:
     lowestNum = int(input("What number would you like to check? "))
     startTime = time.perf_counter()
     for numChecking in range(1,lowestNum+1):
