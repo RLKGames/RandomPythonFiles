@@ -11,5 +11,5 @@ This is a collection of random python files that I make
 > [!IMPORTANT]
 > You need python installed on your device to run these files
 
-> [!WARN]
+> [!WARNING]
 > SQUARE NUMBER GENERATOR IS BROKEN AS OF V1.3
