@@ -1,13 +1,10 @@
 import datetime
 import time
 
-dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-filePath = "PrimeNumberGeneratorOutput-" + str(dateTimeNow)
-filePath2 = filePath + ".txt"
-filePath2 = filePath2.replace(":","-")
-filePath2 = filePath2.replace(" ","-")
+dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+filePath = "PrimeNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
 
-with open(filePath2,"a") as f:
+with open(filePath,"a") as f:
     lowestNum = int(input("What is the lowest number you would like to check? "))
     highestNum = int(input("What is the highest number you would like to check? "))
     startTime = time.perf_counter()
