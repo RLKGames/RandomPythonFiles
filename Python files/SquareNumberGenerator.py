@@ -1,6 +1,5 @@
 import datetime
 import time
-import math
 
 dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 filePath = "SquareNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
@@ -11,9 +10,7 @@ startTime = time.perf_counter()
 
 with open(filePath,"a") as f:
     for numChecking in range(lowestNum,highestNum+1):
-        sqroot = math.sqrt(numChecking)
-        intsqroot = int(sqroot)
-        if intsqroot == sqroot:
+        if int(numChecking ** (1/2)) == numChecking ** (1/2):
             output = str(numChecking) + " is a square number"
         else:
             output = str(numChecking) + " is not a square number"
