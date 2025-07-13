@@ -1,6 +1,5 @@
 import datetime
 import time
-import math
 
 dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 filePath = "CubeNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
@@ -11,9 +10,7 @@ startTime = time.perf_counter()
 
 with open(filePath,"a") as f:
     for numChecking in range(lowestNum,highestNum+1):
-        cuberoot = math.cbrt(numChecking)
-        intcuberoot = int(cuberoot)
-        if intcuberoot == cuberoot:
+        if int(numChecking ** (1/3)) == numChecking ** (1/3):
             output = str(numChecking) + " is a cube number"
         else:
             output = str(numChecking) + " is not a cube number"
