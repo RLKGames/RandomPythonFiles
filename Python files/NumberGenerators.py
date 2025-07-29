@@ -28,11 +28,8 @@ if mainMenu == 1:
             if numChecking % numAgainst == 0:
                 factorCount += 1
         if factorCount == 2:
-            output = str(numChecking) + " is prime"
-        else:
-            output = str(numChecking) + " is not prime"
-        print(output)
-        f.write(output + "\n")
+            print(str(numChecking) + " is prime")
+            f.write(str(numChecking) + " is prime" + "\n")
 
 elif mainMenu == 2:
     print("Exponent generator")
@@ -46,11 +43,8 @@ elif mainMenu == 2:
     f = open(filePath, "a")
     for numChecking in range(lowestNum, highestNum + 1):
         if int(round(numChecking ** (1/exponentNum), 0)) == round(numChecking ** (1/exponentNum),2):
-            output = str(numChecking) + " IS an integer which can be gotten from raising another integer to the power of " + str(exponentNum)
-        else:
-            output = str(numChecking) + " is NOT an integer which can be gotten from raising another integer to the power of " + str(exponentNum)
-        print(output)
-        f.write(output + "\n")
+            print(str(numChecking) + " IS an integer which can be gotten from raising another integer to the power of " + str(exponentNum))
+            f.write(str(numChecking) + " IS an integer which can be gotten from raising another integer to the power of " + str(exponentNum) + "\n")
 
 elif mainMenu == 3:
     print("\n\nNumber factor generator:")
@@ -60,11 +54,8 @@ elif mainMenu == 3:
     f = open(filePath, "a")
     for numAgainst in range(1, numChecking + 1):
         if numChecking % numAgainst == 0:
-            output = str(numAgainst) + " is a factor of " + str(numChecking)
-        else:
-            output = str(numAgainst) + " is not a factor of " + str(numChecking)
-        print(output)
-        f.write(output + "\n")
+            print(str(numAgainst) + " is a factor of " + str(numChecking))
+            f.write(str(numAgainst) + " is a factor of " + str(numChecking) + "\n")
 
 elif mainMenu == 4:
     print("\nOk, quitting\n")
