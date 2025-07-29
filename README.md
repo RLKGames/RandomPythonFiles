@@ -1,7 +1,7 @@
 > [!IMPORTANT]
 > You need python installed on your device to run these files
 
-This is a collection of random python files that I make
+This is a collection of random python files that I have made
 
 ## These are the python files that are currently in the collection
 ### NumberGenerators.py
