@@ -1,5 +1,6 @@
 import datetime
 import time
+import random
 
 errorCode1 = "Error code 1: If this message appears then please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues"
 startTime = 0
@@ -8,7 +9,8 @@ print("""Main Menu:
 1) Prime number generator
 2) Exponent generator
 3) Number factors generator
-4) Quit
+4) Random number generator
+5) Quit
 """)
 
 mainMenu = int(input("Chose from options 1, 2, 3, 4 and 5: "))
@@ -58,16 +60,23 @@ elif mainMenu == 3:
             f.write(str(numAgainst) + " is a factor of " + str(numChecking) + "\n")
 
 elif mainMenu == 4:
+    print("\n\nRandom number generator:")
+    filePath = "RandomNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
+    lowestNum = int(input("What is the lowest number in the range? "))
+    highestNum = int(input("What is the highest number in the range? "))
+    f = open(filePath, "a")
+    randNum = random.randint(lowestNum,highestNum)
+    print("\n\nThe random number generated is " + str(randNum))
+    f.write("The random number generated is " + str(randNum))
+
+elif mainMenu == 5:
     print("\nOk, quitting\n")
     quit()
-
 
 if startTime != 0:
     endTime = time.perf_counter()
     timeElapsed = round(endTime - startTime,2)
     print("\nTime taken: " + str(timeElapsed) + "s")
     f.write("Time taken: " + str(timeElapsed) + "s")
-else:
-    print(errorCode1)
 
 f.close()
