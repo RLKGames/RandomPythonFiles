@@ -29,33 +29,34 @@ ERRORCODE1 = "Error code 1: If this message appears then please report this as a
 
 correct = False
 running = True
+
 attempts = 0
 
 while running == True:
-    highestNum = int(input("What should the highest number be? "))
+    highestNum = LBLIntInput("What should the highest number be? ")
     if highestNum <= 1:
-        print("The number has to be more than 1")
+        LBL("The number has to be more than 1")
         quit()
     num = random.randint(1,highestNum)
 
     while correct == False:
-        guess = int(input("\nEnter a guess between 1 and " + str(highestNum) + " "))
+        guess = LBLIntInput("\nEnter a guess between 1 and " + str(highestNum) + " ")
         attempts += 1
         if guess > num:
-            print("Too high")
+            LBL("Too high")
         elif guess < num:
-            print("Too low")
+            LBL("Too low")
         elif guess == num:
-            print("Correct!")
-            print("You took " + str(attempts) + " attempts to guess a number between 1 and "+ str(highestNum))
+            LBL("Correct!")
+            LBL("You took " + str(attempts) + " attempts to guess a number between 1 and "+ str(highestNum))
             correct = True
         else:
-            print(ERRORCODE1)
+            LBL(ERRORCODE1)
 
-    runAgainQ = input("\n\nWould you like to play again? ")
+    runAgainQ = LBLInput("\n\nWould you like to play again? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
         running = True
-        print("\n\n\n\n")
+        print("\n\n\n\n\n\n\n\n\n\n\n")
     else:
         running = False
-        print("\nOk, quitting\n")
+        LBL("\nOk, quitting\n")
