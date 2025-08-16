@@ -25,8 +25,6 @@ def LBLIntInput(printInput):
     output = int(input())
     return output
 
-
-
 ERRORCODE1 = "Error code 1: The computer somehow didn't chose rock, paper or scissors. Please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues"
 ERRORCODE2 = "Error code 2: You didn't chose rock, paper or scissors. If you did chose rock, paper or scissors then please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues"
 
@@ -34,60 +32,60 @@ running = True
 
 while running == True:
     com1 = random.randint(1,3)
-    p1 = input("Choose rock paper or scissors ")
+    p1 = LBLInput("Choose rock paper or scissors ")
     if p1 == "1" or p1 == "r" or p1 == "rock":
-        print("You chose rock")
+        LBL("You chose rock")
         match com1:
             case 1:
-                print("The computer chose rock")
-                print("You drew!")
+                LBL("The computer chose rock")
+                LBL("You drew!")
             case 2:
-                print("The computer chose paper")
-                print("You lost!")
+                LBL("The computer chose paper")
+                LBL("You lost!")
             case 3:
-                print("The computer chose scissors")
-                print("You won!")
+                LBL("The computer chose scissors")
+                LBL("You won!")
             case _:
-                print(ERRORCODE1)
+                LBL(ERRORCODE1)
 
     elif p1 == "2" or p1 == "p" or p1 == "paper":
-        print("You chose paper")
+        LBL("You chose paper")
         match com1:
             case 1:
-                print("The computer chose rock")
-                print("You won!")
+                LBL("The computer chose rock")
+                LBL("You won!")
             case 2:
-                print("The computer chose paper")
-                print("You drew!")
+                LBL("The computer chose paper")
+                LBL("You drew!")
             case 3:
-                print("The computer chose scissors")
-                print("You lost!")
+                LBL("The computer chose scissors")
+                LBL("You lost!")
             case _:
-                print(ERRORCODE1)
+                LBL(ERRORCODE1)
 
     elif p1 == "3" or p1 == "s" or p1 == "scissors":
-        print("You chose scissors")
+        LBL("You chose scissors")
         match com1:
             case 1:
-                print("The computer chose rock")
-                print("You lost!")
+                LBL("The computer chose rock")
+                LBL("You lost!")
             case 2:
-                print("The computer chose paper")
-                print("You won!")
+                LBL("The computer chose paper")
+                LBL("You won!")
             case 3:
-                print("The computer chose scissors")
-                print("You drew!")
+                LBL("The computer chose scissors")
+                LBL("You drew!")
             case _:
-                print(ERRORCODE1)
+                LBL(ERRORCODE1)
 
     else:
-        print(ERRORCODE2)
+        LBL(ERRORCODE2)
 
 
-    runAgainQ = input("\n\nWould you like to play again? ")
+    runAgainQ = LBLInput("\n\nWould you like to play again? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
         running = True
         print("\n\n\n\n\n\n\n\n\n\n\n")
     else:
         running = False
-        print("\nOk, quitting\n")
+        LBL("\nOk, quitting\n")
