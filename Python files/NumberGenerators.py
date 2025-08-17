@@ -125,7 +125,7 @@ Main Menu:
     runAgainQ = LBLInput("Would you like to go back to the main menu? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
         running = True
-        LBL("\n\n\n\n")
+        LBL("\n\n\n\n\n\n\n\n\n\n\n")
     else:
         running = False
         LBL("\nOk, quitting\n")
