@@ -45,10 +45,10 @@ while running == True:
     diceCount = LBLIntInput("How many dice should I roll? ")
     count = 0
 
-    for i in range(0,diceCount):
-        diceRoll = random.randint(0,diceSides-1)
+    for i in range(0, diceCount):
+        diceRoll = random.randint(0, diceSides - 1)
         count += 1
-        print("Dice number "+str(count)+" rolled "+str(diceRoll+1))
+        print("Dice number " + str(count) + " rolled " + str(diceRoll+1))
 
     runAgainQ = input("\n\nWould you like to roll dice again? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
