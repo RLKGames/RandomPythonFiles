@@ -10,13 +10,6 @@ def LBL(printInput):
         time.sleep(0.005)
     print()
 
-def LBLFast(printInput):
-    for x in (str(printInput)):
-        sys.stdout.write(x)
-        sys.stdout.flush()
-        time.sleep(0.0005)
-    print()
-
 def LBLInput(printInput):
     for x in (str(printInput)):
         sys.stdout.write(x)
@@ -40,7 +33,6 @@ running = True
 dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 filePath = "PrimeNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
 f = open(filePath, "a")
-
 
 while running == True:
     diceCount = LBLIntInput("How many coins should I flip? ")
