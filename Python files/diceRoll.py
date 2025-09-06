@@ -10,13 +10,6 @@ def LBL(printInput):
         time.sleep(0.005)
     print()
 
-def LBLFast(printInput):
-    for x in (str(printInput)):
-        sys.stdout.write(x)
-        sys.stdout.flush()
-        time.sleep(0.0005)
-    print()
-
 def LBLInput(printInput):
     for x in (str(printInput)):
         sys.stdout.write(x)
@@ -36,9 +29,8 @@ def LBLIntInput(printInput):
 running = True
 
 dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-filePath = "PrimeNumberGeneratorOutput-" + str(dateTimeNow) + ".txt"
+filePath = "DiceRollOutput-" + str(dateTimeNow) + ".txt"
 f = open(filePath, "a")
-
 
 while running == True:
     diceSides = LBLIntInput("How many sides should the dice have? ")
@@ -49,6 +41,7 @@ while running == True:
         diceRoll = random.randint(0, diceSides - 1)
         count += 1
         print("Dice number " + str(count) + " rolled " + str(diceRoll+1))
+        f.write("Dice number " + str(count) + " rolled " + str(diceRoll+1 + "\n"))
 
     runAgainQ = input("\n\nWould you like to roll dice again? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
@@ -57,3 +50,5 @@ while running == True:
     else:
         running = False
         LBL("\nOk, quitting\n")
+
+f.close()
