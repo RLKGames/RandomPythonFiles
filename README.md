@@ -2,7 +2,7 @@
 > You need python installed on your device to run these files
 
 > [!NOTE]
-> V2.0 is out soon!
+> V2.0 out soon!
 
 This is a collection of random python files that I have made
 
@@ -14,3 +14,6 @@ This is a collection of random python files that I have made
 
 - Rock paper scissors - play rock paper scissors against a computer
 - Number guessing game - guess a random number
+- Unit converter - converts between various units
+- Coin flip - flip a specified number of coins
+- Dice roll - roll dice
