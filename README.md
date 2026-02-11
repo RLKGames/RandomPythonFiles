@@ -16,4 +16,4 @@ This is a collection of random python files that I have made
 - Number guessing game - guess a random number
 - Unit converter - converts between various units
 - Coin flip - flip a specified number of coins
-- Dice roll - roll dice
+- Dice roll - roll a specified number of dice with a specified number of faces
