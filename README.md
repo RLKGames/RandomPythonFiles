@@ -2,7 +2,7 @@
 > You need python installed on your device to run these files
 
 > [!NOTE]
-> V2.0 out soon!
+> v2.0 out soon!
 
 This is a collection of random python files that I have made
 
