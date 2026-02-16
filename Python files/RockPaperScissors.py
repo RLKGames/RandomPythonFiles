@@ -112,11 +112,10 @@ def rps():
                 errorPrint(2)
     else:
         errorPrint(3)
-    
-    
+
 # run again prompt
 def runAgain():
-    runAgainQ = LBLInput("Would you like to go back to the main menu? ")
+    runAgainQ = LBLInput("Would you like to play again? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
         rps()
     else:
