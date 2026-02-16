@@ -88,7 +88,7 @@ def primeNumberGen():
     endTime = time.perf_counter()
     timeTaken = round(endTime - startTime, 2)
     output = str(num) + " numbers have been generated\nTook: " + str(timeTaken) + "s"
-    print(dateTimeNow, "prime", output)
+    printToFile(dateTimeNow, "prime", output)
 
 # exponent of a number generator
 def exponentOfNumGen():
