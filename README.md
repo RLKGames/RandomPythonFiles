@@ -1,5 +1,6 @@
 > [!IMPORTANT]
-> You need python installed on your device to run these files
+> For v2.0 and later, you need atleast python 3.10 installed.  
+> For v1.4.1 and earlier, you need atleast python 1.0 installed.
 
 > [!NOTE]
 > v2.0 out soon!
