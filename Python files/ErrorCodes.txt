@@ -1,0 +1,3 @@
+Error code 100: If this message appears then please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues
+Error code 200: The computer somehow didn't chose rock, paper or scissors. Please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues
+Error code 300: You didn't chose rock, paper or scissors. If you did chose rock, paper or scissors then please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues
