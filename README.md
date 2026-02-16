@@ -12,6 +12,7 @@ This is a collection of random python files that I have made
 - Exponent generator - generates all numbers in a range you that specify that can be gotten by raising an integer to the power that you specify (As of v2.0) (in v1.4.1, split into cubeNumberGenerator.py and squareNumberGenerator.py)
 - Number factors generator - generates a list of all of the factors of a number (in v1.4.1, separated into numberFactorsGenerator.py)
 
+### Others
 - Rock paper scissors - play rock paper scissors against a computer
 - Number guessing game - guess a random number
 - Unit converter - converts between various units (in v2.1)
