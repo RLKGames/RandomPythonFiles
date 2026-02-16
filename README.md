@@ -3,7 +3,7 @@
 > For v1.4.1 and earlier, you need atleast python 1.0 installed.
 
 > [!NOTE]
-> v2.0 out soon!
+> v2.0 out now!
 
 This is a collection of random python files that I have made
 
