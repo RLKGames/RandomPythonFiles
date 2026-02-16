@@ -2,90 +2,125 @@ import random
 import sys
 import time
 
+# error printer
+def errorPrint(errorID):
+    f = open("Python files/ErrorCodes.txt")
+    errorPrint = f.readlines(errorID).replace("[", "").replace("]", "").replace("\\n", "").replace("'", "")
+    f.readlines(errorID)
+
+# one by one character printer
 def LBL(printInput):
     for x in (str(printInput)):
         sys.stdout.write(x)
         sys.stdout.flush()
-        time.sleep(0.005)
+        time.sleep(0.01)
     print()
 
+# one by one character printer with input
 def LBLInput(printInput):
     for x in (str(printInput)):
         sys.stdout.write(x)
         sys.stdout.flush()
-        time.sleep(0.005)
+        time.sleep(0.01)
     output = input()
     return output
 
+# one by one character printer with integer input
 def LBLIntInput(printInput):
     for x in (str(printInput)):
         sys.stdout.write(x)
         sys.stdout.flush()
-        time.sleep(0.005)
+        time.sleep(0.01)
     output = int(input())
     return output
 
-ERRORCODE1 = "Error code 1: The computer somehow didn't chose rock, paper or scissors. Please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues"
-ERRORCODE2 = "Error code 2: You didn't chose rock, paper or scissors. If you did chose rock, paper or scissors then please report this as a bug at https://github.com/RLKGames/RandomPythonFiles/issues"
+# quit program
+def quitProgram():
+        LBL("\nQuitting...")
+        quit()
 
-running = True
+# wait
+def wait():
+    time.sleep(0.3)
 
-while running == True:
+# rock paper scissors
+def rps():
     com1 = random.randint(1,3)
     p1 = LBLInput("Choose rock paper or scissors ")
+    # rock
     if p1 == "1" or p1 == "r" or p1 == "rock":
         LBL("You chose rock")
         match com1:
             case 1:
+                wait()
                 LBL("The computer chose rock")
+                wait()
                 LBL("You drew!")
             case 2:
+                wait()
                 LBL("The computer chose paper")
+                wait()
                 LBL("You lost!")
             case 3:
+                wait()
                 LBL("The computer chose scissors")
+                wait()
                 LBL("You won!")
             case _:
-                LBL(ERRORCODE1)
-
+                errorPrint(2)
+    # paper
     elif p1 == "2" or p1 == "p" or p1 == "paper":
         LBL("You chose paper")
         match com1:
             case 1:
+                wait()
                 LBL("The computer chose rock")
+                wait()
                 LBL("You won!")
             case 2:
+                wait()
                 LBL("The computer chose paper")
+                wait()
                 LBL("You drew!")
             case 3:
+                wait()
                 LBL("The computer chose scissors")
+                wait()
                 LBL("You lost!")
             case _:
-                LBL(ERRORCODE1)
-
+                errorPrint(2)
+    # scissors
     elif p1 == "3" or p1 == "s" or p1 == "scissors":
         LBL("You chose scissors")
         match com1:
             case 1:
+                wait()
                 LBL("The computer chose rock")
+                wait()
                 LBL("You lost!")
             case 2:
+                wait()
                 LBL("The computer chose paper")
+                wait()
                 LBL("You won!")
             case 3:
+                wait()
                 LBL("The computer chose scissors")
+                wait()
                 LBL("You drew!")
             case _:
-                LBL(ERRORCODE1)
-
+                errorPrint(2)
     else:
-        LBL(ERRORCODE2)
-
-
-    runAgainQ = LBLInput("\n\nWould you like to play again? ")
+        errorPrint(3)
+    
+    
+# run again prompt
+def runAgain():
+    runAgainQ = LBLInput("Would you like to go back to the main menu? ")
     if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
-        running = True
-        print("\n\n\n\n\n\n\n\n\n\n\n")
+        rps()
     else:
-        running = False
-        LBL("\nOk, quitting\n")
+        quitProgram()
+
+# main code
+rps()
