@@ -25,15 +25,6 @@ def LBLInput(printInput):
     output = input()
     return output
 
-# one by one character printer with integer input
-def LBLIntInput(printInput):
-    for x in (str(printInput)):
-        sys.stdout.write(x)
-        sys.stdout.flush()
-        time.sleep(0.01)
-    output = int(input())
-    return output
-
 # quit program
 def quitProgram():
         LBL("\nQuitting...")
