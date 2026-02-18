@@ -1,4 +1,4 @@
-Latested version = v2.1
+Latest version = v2.1
 
 > [!IMPORTANT]
 > For v2.0 and later, you need atleast python 3.10 installed  
