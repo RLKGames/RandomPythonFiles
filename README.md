@@ -1,13 +1,14 @@
 > [!IMPORTANT]
-> For v2.0 and later, you need atleast python 3.10 installed.  
-> For v1.4.1 and earlier, you need atleast python 1.0 installed.
+> For v2.0 and later, you need atleast python 3.10 installed  
+> For v1.4.1 and earlier, you need atleast python 1.0 installed
 
 > [!NOTE]
-> v2.0 out now!
+> v2.1 and later are made using python 3.14.3  
+> v2.0 and earlier are made using python 3.12.3
 
 This is a collection of random python files that I have made
 
-## These are the python files that are currently in the collection
+## These are the files in the collection
 ### NumberGenerators.py
 - Prime number generator - generates all prime numbers in a range that you specify
 - Exponent generator - generates all numbers in a range you that specify that can be gotten by raising an integer to the power that you specify
