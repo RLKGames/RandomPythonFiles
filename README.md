@@ -5,8 +5,7 @@ Latest version = v2.1
 > For v1.4.1 and earlier, you need atleast python 1.0 installed
 
 > [!NOTE]
-> v2.1 and later are made using python 3.14.3  
-> v2.0 and earlier are made using python 3.12.3
+> I use python 3.12.3
 
 This is a collection of random python files that I have made
 
