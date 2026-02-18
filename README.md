@@ -1,3 +1,5 @@
+Latest version = v2.1
+
 > [!IMPORTANT]
 > For v2.0 and later, you need atleast python 3.10 installed  
 > For v1.4.1 and earlier, you need atleast python 1.0 installed
@@ -15,8 +17,8 @@ This is a collection of random python files that I have made
 - Number factors generator - generates a list of all of the factors of a number
 
 ### Others
-- Rock paper scissors - play rock paper scissors against a computer
-- Number guessing game - guess a random number
-- Unit converter - converts between various units (in v2.1)
-- Coin flip - flip a specified number of coins (in v2.1)
-- Dice roll - roll a specified number of dice with a specified number of faces (in v2.1)
+- rockPaperScissors.py - play rock paper scissors against a computer
+- numberGuessingGame.py - guess a random number
+- unitConverter.py - converts between various units (can currently only convert between metric length units, more will added in v2.2)
+- coinFlip.py - flip a specified number of coins
+- diceRoll.py - roll a specified number of dice with a specified number of faces
