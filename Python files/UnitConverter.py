@@ -64,8 +64,8 @@ Convert from:
     11) Yard (Not finished)
     12) Mile (Not finished)
     13) Nautical mile (Not finished)
-    14) Back to main menu (Not finished)
-    15) Quit (Not finished)
+    14) Back to main menu
+    15) Quit
     """)
     lengthMenu = LBLIntInput("Chose from options 1 - 15: ")
     if lengthMenu == 1:
@@ -133,43 +133,42 @@ Convert to:
     """)
     lengthPicometreMenu = LBLIntInput("Chose from options 1 - 15: ")
     picometres = LBLFloatInput("Enter the amount of picometres: ")
-    print("picometres = " + str(picometres))
     if lengthPicometreMenu == 1:
         nanometres = picometres/1000
-        print(str(picometres) + " picometres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{picometres} picometres = {nanometres:.3f} nanometres")
     elif lengthPicometreMenu == 2:
         micrometres = picometres/1000000
-        print(str(picometres) + " picometres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{picometres} picometres = {micrometres:.3f} micrometres")
     elif lengthPicometreMenu == 3:
         millimetres = picometres/1000000000
-        print(str(picometres) + " picometres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{picometres} picometres = {millimetres:.3f} millimetres")
     elif lengthPicometreMenu == 4:
         centimetres = picometres/10000000000
-        print(str(picometres) + " picometres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{picometres} picometres = {centimetres:.3f} centimetres")
     elif lengthPicometreMenu == 5:
         decimetre = picometres/100000000000
-        print(str(picometres) + " picometres = " + str(round(decimetre,3)) + " decimetre")
+        LBL(f"{picometres} picometres = {decimetre:.3f} decimetre")
     elif lengthPicometreMenu == 6:
         metres = picometres/1000000000000
-        print(str(picometres) + " picometres = " + str(round(metres,3)) + " metres")
+        LBL(f"{picometres} picometres = {metres:.3f} metres")
     elif lengthPicometreMenu == 7:
         kilometres = picometres/1000000000000000
-        print(str(picometres) + " picometres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{picometres} picometres = {kilometres:.3f} kilometres")
     elif lengthPicometreMenu == 8:
         inches = picometres/25400000000
-        print(str(picometres) + " picometres = " + str(round(inches,3)) + " inches")
+        LBL(f"{picometres} picometres = {inches:.3f} inches")
     elif lengthPicometreMenu == 9:
         feet = picometres/304800000000
-        print(str(picometres) + " picometres = " + str(round(feet,3)) + " feet")
+        LBL(f"{picometres} picometres = {feet:.3f} feet")
     elif lengthPicometreMenu == 10:
         yards = picometres/914400000000
-        print(str(picometres) + " picometres = " + str(round(yards,3)) + " yards")
+        LBL(f"{picometres} picometres = {yards:.3f} yards")
     elif lengthPicometreMenu == 11:
         miles = picometres/1609340000000000
-        print(str(picometres) + " picometres = " + str(round(miles,3)) + " miles")
+        LBL(f"{picometres} picometres = {miles:.3f} miles")
     elif lengthPicometreMenu == 12:
         nauticalMiles = picometres/1852000000000000
-        print(str(picometres) + " picometres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{picometres} picometres = {nauticalMiles:.3f} nautical miles")
     elif lengthPicometreMenu == 13:
         convertLength()
     elif lengthPicometreMenu == 14:
@@ -201,40 +200,40 @@ Convert to:
     nanometres = LBLFloatInput("Enter the amount of nanometres: ")
     if lengthNanometreMenu == 1:
         picometres = nanometres*1000
-        print(str(nanometres) + " nanometres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{nanometres} nanometres = {picometres:.3f} picometres")
     elif lengthNanometreMenu == 2:
         micrometres = nanometres/1000
-        print(str(nanometres) + " nanometres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{nanometres} nanometres = {micrometres:.3f} micrometres")
     elif lengthNanometreMenu == 3:
         millimetres = nanometres/1000000
-        print(str(nanometres) + " nanometres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{nanometres} nanometres = {millimetres:.3f} millimetres")
     elif lengthNanometreMenu == 4:
         centimetres = nanometres/10000000
-        print(str(nanometres) + " nanometres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{nanometres} nanometres = {centimetres:.3f} centimetres")
     elif lengthNanometreMenu == 5:
         decimetre = nanometres/100000000
-        print(str(nanometres) + " nanometres = " + str(round(decimetre,3)) + " decimetre")
+        LBL(f"{nanometres} nanometres = {decimetre:.3f} decimetre")
     elif lengthNanometreMenu == 6:
         metres = nanometres/1000000000
-        print(str(nanometres) + " nanometres = " + str(round(metres,3)) + " metres")
+        LBL(f"{nanometres} nanometres = {metres:.3f} metres")
     elif lengthNanometreMenu == 7:
         kilometres = nanometres/1000000000000
-        print(str(nanometres) + " nanometres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{nanometres} nanometres = {kilometres:.3f} kilometres")
     elif lengthNanometreMenu == 8:
         inches = nanometres/25400000
-        print(str(nanometres) + " nanometres = " + str(round(inches,3)) + " inches")
+        LBL(f"{nanometres} nanometres = {inches:.3f} inches")
     elif lengthNanometreMenu == 9:
         feet = nanometres/304800000
-        print(str(nanometres) + " nanometres = " + str(round(feet,3)) + " feet")
+        LBL(f"{nanometres} nanometres = {feet,:.3f} feet")
     elif lengthNanometreMenu == 10:
         yards = nanometres/914400000
-        print(str(nanometres) + " nanometres = " + str(round(yards,3)) + " yards")
+        LBL(f"{nanometres} nanometres = {yards:.3f} yards")
     elif lengthNanometreMenu == 11:
         miles = nanometres/1609340000000
-        print(str(nanometres) + " nanometres = " + str(round(miles,3)) + " miles")
+        LBL(f"{nanometres} nanometres = {miles:.3f} miles")
     elif lengthNanometreMenu == 12:
         nauticalMiles = nanometres/1852000000000
-        print(str(nanometres) + " nanometres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{nanometres} nanometres = {nauticalMiles:.3f} nautical miles")
     elif lengthNanometreMenu == 13:
         convertLength()
     elif lengthNanometreMenu == 14:
@@ -266,40 +265,40 @@ Convert to:
     micrometres = LBLFloatInput("Enter the amount of micrometres: ")
     if lengthMicrometreMenu == 1:
         picometres = micrometres*1000000
-        print(str(micrometres) + " micrometres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{micrometres} micrometres = {picometres:.3f} picometres")
     elif lengthMicrometreMenu == 2:
         nanometres = micrometres*1000
-        print(str(micrometres) + " micrometres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{micrometres} micrometres = {nanometres:.3f} nanometres")
     elif lengthMicrometreMenu == 3:
         millimetres = micrometres/1000
-        print(str(micrometres) + " micrometres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{micrometres} micrometres = {millimetres:.3f} millimetres")
     elif lengthMicrometreMenu == 4:
         centimetres = micrometres/10000
-        print(str(micrometres) + " micrometres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{micrometres} micrometres = {centimetres:.3f} centimetres")
     elif lengthMicrometreMenu == 5:
         decimetre = micrometres/100000
-        print(str(micrometres) + " micrometres = " + str(round(decimetre,3)) + " decimetre")
+        LBL(f"{micrometres} micrometres = {decimetre:.3f} decimetre")
     elif lengthMicrometreMenu == 6:
         metres = micrometres/1000000
-        print(str(micrometres) + " micrometres = " + str(round(metres,3)) + " metres")
+        LBL(f"{micrometres} micrometres = {metres:.3f} metres")
     elif lengthMicrometreMenu == 7:
         kilometres = micrometres/1000000
-        print(str(micrometres) + " micrometres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{micrometres} micrometres = {kilometres:.3f} kilometres")
     elif lengthMicrometreMenu == 8:
         inches = micrometres/25400
-        print(str(micrometres) + " micrometres = " + str(round(inches,3)) + " inches")
+        LBL(f"{micrometres} micrometres = {inches:.3f} inches")
     elif lengthMicrometreMenu == 9:
         feet = micrometres/304800
-        print(str(micrometres) + " micrometres = " + str(round(feet,3)) + " feet")
+        LBL(f"{micrometres} micrometres = {feet:.3f} feet")
     elif lengthMicrometreMenu == 10:
         yards = micrometres/914400
-        print(str(micrometres) + " micrometres = " + str(round(yards,3)) + " yards")
+        LBL(f"{micrometres} micrometres = {yards:.3f} yards")
     elif lengthMicrometreMenu == 11:
         miles = micrometres/1609340000
-        print(str(micrometres) + " micrometres = " + str(round(miles,3)) + " miles")
+        LBL(f"{micrometres} micrometres = {miles:.3f} miles")
     elif lengthMicrometreMenu == 12:
         nauticalMiles = micrometres/1852000000
-        print(str(micrometres) + " micrometres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{micrometres} micrometres = {nauticalMiles:.3f} nautical miles")
     elif lengthMicrometreMenu == 13:
         convertLength()
     elif lengthMicrometreMenu == 14:
@@ -331,40 +330,40 @@ Convert to:
     millimetres = LBLFloatInput("Enter the amount of millimetres: ")
     if lengthMillimetreMenu == 1:
         picometres = millimetres*1000000000
-        print(str(millimetres) + " millimetres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{millimetres} millimetres = {picometres:.3f} picometres")
     elif lengthMillimetreMenu == 2:
         nanometres = millimetres*1000000
-        print(str(millimetres) + " millimetres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{millimetres} millimetres = {nanometres:.3f} nanometres")
     elif lengthMillimetreMenu == 3:
         micrometres = millimetres*1000
-        print(str(millimetres) + " millimetres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{millimetres} millimetres = {micrometres:.3f} micrometres")
     elif lengthMillimetreMenu == 4:
         centimetres = millimetres/10
-        print(str(millimetres) + " millimetres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{millimetres} millimetres = {centimetres:.3f} centimetres")
     elif lengthMillimetreMenu == 5:
         decimetre = millimetres/100
-        print(str(millimetres) + " millimetres = " + str(round(decimetre,3)) + " decimetre")
+        LBL(f"{millimetres} millimetres = {decimetre:.3f} decimetre")
     elif lengthMillimetreMenu == 6:
         metres = millimetres/1000
-        print(str(millimetres) + " millimetres = " + str(round(metres,3)) + " metres")
+        LBL(f"{millimetres} millimetres = {metres:.3f} metres")
     elif lengthMillimetreMenu == 7:
         kilometres = millimetres/1000000
-        print(str(millimetres) + " millimetres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{millimetres} millimetres = {kilometres:.3f} kilometres")
     elif lengthMillimetreMenu == 8:
         inches = millimetres/25.4
-        print(str(millimetres) + " millimetres = " + str(round(inches,3)) + " inches")
+        LBL(f"{millimetres} millimetres = {inches:.3f} inches")
     elif lengthMillimetreMenu == 9:
         feet = millimetres/304.8
-        print(str(millimetres) + " millimetres = " + str(round(feet,3)) + " feet")
+        LBL(f"{millimetres} millimetres = {feet:.3f} feet")
     elif lengthMillimetreMenu == 10:
         yards = millimetres/914.4
-        print(str(millimetres) + " millimetres = " + str(round(yards,3)) + " yards")
+        LBL(f"{millimetres} millimetres = {yards:.3f} yards")
     elif lengthMillimetreMenu == 11:
         miles = millimetres/1609340
-        print(str(millimetres) + " millimetres = " + str(round(miles,3)) + " miles")
+        LBL(f"{millimetres} millimetres = {miles:.3f} miles")
     elif lengthMillimetreMenu == 12:
         nauticalMiles = millimetres/1852000
-        print(str(millimetres) + " millimetres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{millimetres} millimetres = {nauticalMiles:.3f} nautical miles")
     elif lengthMillimetreMenu == 13:
         convertLength()
     elif lengthMillimetreMenu == 14:
@@ -396,40 +395,40 @@ Convert to:
     centimetres = LBLFloatInput("Enter the amount of centimetres: ")
     if lengthCentimetreMenu == 1:
         picometres = centimetres*10000000000
-        print(str(centimetres) + " centimetres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{centimetres} centimetres = {picometres:.3f} picometres")
     elif lengthCentimetreMenu == 2:
         nanometres = centimetres*10000000
-        print(str(centimetres) + " centimetres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{centimetres} centimetres = {nanometres:.3f} nanometres")
     elif lengthCentimetreMenu == 3:
         micrometres = centimetres*10000
-        print(str(centimetres) + " centimetres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{centimetres} centimetres = {micrometres:.3f} micrometres")
     elif lengthCentimetreMenu == 4:
         millimetres = centimetres*10
-        print(str(centimetres) + " centimetres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{centimetres} centimetres = {millimetres:.3f} millimetres")
     elif lengthCentimetreMenu == 5:
         decimetres = centimetres/100000
-        print(str(centimetres) + " centimetres = " + str(round(decimetres,3)) + " decimetre")
+        LBL(f"{centimetres} centimetres = {decimetres:.3f} decimetre")
     elif lengthCentimetreMenu == 6:
         metres = centimetres/100000000
-        print(str(centimetres) + " centimetres = " + str(round(metres,3)) + " metres")
+        LBL(f"{centimetres} centimetres = {metres:.3f} metres")
     elif lengthCentimetreMenu == 7:
         kilometres = centimetres/100000000000
-        print(str(centimetres) + " centimetres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{centimetres} centimetres = {kilometres:.3f} kilometres")
     elif lengthCentimetreMenu == 8:
         inches = centimetres/2.54
-        print(str(centimetres) + " centimetres = " + str(round(inches,3)) + " inches")
+        LBL(f"{centimetres} centimetres = {inches:.3f} inches")
     elif lengthCentimetreMenu == 9:
         feet = centimetres/30.48
-        print(str(centimetres) + " centimetres = " + str(round(feet,3)) + " feet")
+        LBL(f"{centimetres} centimetres = {feet:.3f} feet")
     elif lengthCentimetreMenu == 10:
         yards = centimetres/91.44
-        print(str(centimetres) + " centimetres = " + str(round(yards,3)) + " yards")
+        LBL(f"{centimetres} centimetres = {yards:.3f} yards")
     elif lengthCentimetreMenu == 11:
         miles = centimetres/160934
-        print(str(centimetres) + " centimetres = " + str(round(miles,3)) + " miles")
+        LBL(f"{centimetres} centimetres = {miles:.3f} miles")
     elif lengthCentimetreMenu == 12:
         nauticalMiles = centimetres/185200
-        print(str(centimetres) + " centimetres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{centimetres} centimetres = {nauticalMiles:.3f} nautical miles")
     elif lengthCentimetreMenu == 13:
         convertLength()
     elif lengthCentimetreMenu == 14:
@@ -461,40 +460,40 @@ Convert to:
     decimetres = LBLFloatInput("Enter the amount of decimetres: ")
     if lengthDecimetreMenu == 1:
         picometres = decimetres*100000000000
-        print(str(decimetres) + " decimetres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{decimetres} decimetres = {picometres:.3} picometres")
     elif lengthDecimetreMenu == 2:
         nanometres = decimetres*100000000
-        print(str(decimetres) + " decimetres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{decimetres} decimetres = {nanometres:.3} nanometres")
     elif lengthDecimetreMenu == 3:
         micrometres = decimetres*100000
-        print(str(decimetres) + " decimetres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{decimetres} decimetres = {micrometres:.3} micrometres")
     elif lengthDecimetreMenu == 4:
         millimetres = decimetres*100
-        print(str(decimetres) + " decimetres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{decimetres} decimetres = {millimetres:.3} millimetres")
     elif lengthDecimetreMenu == 5:
         centimetres = decimetres*10
-        print(str(decimetres) + " decimetres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{decimetres} decimetres = {centimetres:.3} centimetres")
     elif lengthDecimetreMenu == 6:
         metres = decimetres/10000000
-        print(str(decimetres) + " decimetres = " + str(round(metres,3)) + " metres")
+        LBL(f"{decimetres} decimetres = {metres:.3} metres")
     elif lengthDecimetreMenu == 7:
         kilometres = decimetres/10000000000
-        print(str(decimetres) + " decimetres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{decimetres} decimetres = {kilometres:.3} kilometres")
     elif lengthDecimetreMenu == 8:
         inches = decimetres/0.254
-        print(str(decimetres) + " decimetres = " + str(round(inches,3)) + " inches")
+        LBL(f"{decimetres} decimetres = {inches:.3} inches")
     elif lengthDecimetreMenu == 9:
         feet = decimetres/3.048
-        print(str(decimetres) + " decimetres = " + str(round(feet,3)) + " feet")
+        LBL(f"{decimetres} decimetres = {feet:.3} feet")
     elif lengthDecimetreMenu == 10:
         yards = decimetres/9.144
-        print(str(decimetres) + " decimetres = " + str(round(yards,3)) + " yards")
+        LBL(f"{decimetres} decimetres = {yards:.3} yards")
     elif lengthDecimetreMenu == 11:
         miles = decimetres/16093.4
-        print(str(decimetres) + " decimetres = " + str(round(miles,3)) + " miles")
+        LBL(f"{decimetres} decimetres = {miles:.3} miles")
     elif lengthDecimetreMenu == 12:
         nauticalMiles = decimetres/18520
-        print(str(decimetres) + " decimetres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{decimetres} decimetres = {nauticalMiles:.3} nautical miles")
     elif lengthDecimetreMenu == 13:
         convertLength()
     elif lengthDecimetreMenu == 14:
@@ -526,40 +525,40 @@ Convert to:
     metres = LBLFloatInput("Enter the amount of metres: ")
     if lengthMetreMenu == 1:
         picometres = metres*1000000000000
-        print(str(metres) + " metres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{metres} metres = {picometres:.3f} picometres")
     elif lengthMetreMenu == 2:
         nanometres = metres*1000000000
-        print(str(metres) + " metres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{metres} metres = {nanometres:.3f} nanometres")
     elif lengthMetreMenu == 3:
         micrometres = metres*1000000
-        print(str(metres) + " metres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{metres} metres = {micrometres:.3f} micrometres")
     elif lengthMetreMenu == 4:
         millimetres = metres*1000
-        print(str(metres) + " metres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{metres} metres = {millimetres:.3f} millimetres")
     elif lengthMetreMenu == 5:
         centimetres = metres*100
-        print(str(metres) + " metres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{metres} metres = {centimetres:.3f} centimetres")
     elif lengthMetreMenu == 6:
         decimetres = metres*10
-        print(str(metres) + " metres = " + str(round(decimetres,3)) + " decimetres")
+        LBL(f"{metres} metres = {decimetres:.3f} decimetres")
     elif lengthMetreMenu == 7:
         kilometres = metres/1000
-        print(str(metres) + " metres = " + str(round(kilometres,3)) + " kilometres")
+        LBL(f"{metres} metres = {kilometres:.3f} kilometres")
     elif lengthMetreMenu == 8:
         inches = metres/0.0254
-        print(str(metres) + " metres = " + str(round(inches,3)) + " inches")
+        LBL(f"{metres} metres = {inches:.3f} inches")
     elif lengthMetreMenu == 9:
         feet = metres/0.3048
-        print(str(metres) + " metres = " + str(round(feet,3)) + " feet")
+        LBL(f"{metres} metres = {feet:.3f} feet")
     elif lengthMetreMenu == 10:
         yards = metres/0.9144
-        print(str(metres) + " metres = " + str(round(yards,3)) + " yards")
+        LBL(f"{metres} metres = {yards:.3f} yards")
     elif lengthMetreMenu == 11:
         miles = metres/1609.34
-        print(str(metres) + " metres = " + str(round(miles,3)) + " miles")
+        LBL(f"{metres} metres = {miles:.3f} miles")
     elif lengthMetreMenu == 12:
         nauticalMiles = metres/1852
-        print(str(metres) + " metres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{metres} metres = {nauticalMiles:.3f} nautical miles")
     elif lengthMetreMenu == 13:
         convertLength()
     elif lengthMetreMenu == 14:
@@ -591,40 +590,40 @@ Convert to:
     kilometres = LBLFloatInput("Enter the amount of kilometres: ")
     if lengthKilometreMenu == 1:
         picometres = kilometres*1000000000000000
-        print(str(kilometres) + " kilometres = " + str(round(picometres,3)) + " picometres")
+        LBL(f"{kilometres} kilometres = {picometres:.3f} picometres")
     elif lengthKilometreMenu == 2:
         nanometres = kilometres*1000000000000
-        print(str(kilometres) + " kilometres = " + str(round(nanometres,3)) + " nanometres")
+        LBL(f"{kilometres} kilometres = {nanometres:.3f} nanometres")
     elif lengthKilometreMenu == 3:
         micrometres = kilometres*1000000000
-        print(str(kilometres) + " kilometres = " + str(round(micrometres,3)) + " micrometres")
+        LBL(f"{kilometres} kilometres = {micrometres:.3f} micrometres")
     elif lengthKilometreMenu == 4:
         millimetres = kilometres*1000000
-        print(str(kilometres) + " kilometres = " + str(round(millimetres,3)) + " millimetres")
+        LBL(f"{kilometres} kilometres = {millimetres:.3f} millimetres")
     elif lengthKilometreMenu == 5:
         centimetres = kilometres*100000
-        print(str(kilometres) + " kilometres = " + str(round(centimetres,3)) + " centimetres")
+        LBL(f"{kilometres} kilometres = {centimetres:.3f} centimetres")
     elif lengthKilometreMenu == 6:
         decimetres = kilometres*10000
-        print(str(kilometres) + " kilometres = " + str(round(decimetres,3)) + " decimetres")
+        LBL(f"{kilometres} kilometres = {decimetres:.3f} decimetres")
     elif lengthKilometreMenu == 7:
         metres = kilometres*1000
-        print(str(kilometres) + " kilometres = " + str(round(metres,3)) + " metres")
+        LBL(f"{kilometres} kilometres = {metres:.3f} metres")
     elif lengthKilometreMenu == 8:
         inches = kilometres/0.0000254
-        print(str(kilometres) + " kilometres = " + str(round(inches,3)) + " inches")
+        LBL(f"{kilometres} kilometres = {inches:.3f} inches")
     elif lengthKilometreMenu == 9:
         feet = kilometres/0.0003048
-        print(str(kilometres) + " kilometres = " + str(round(feet,3)) + " feet")
+        LBL(f"{kilometres} kilometres = {feet:.3f} feet")
     elif lengthKilometreMenu == 10:
         yards = kilometres/0.0009144
-        print(str(kilometres) + " kilometres = " + str(round(yards,3)) + " yards")
+        LBL(f"{kilometres} kilometres = {yards:.3f} yards")
     elif lengthKilometreMenu == 11:
         miles = kilometres/1.60934
-        print(str(kilometres) + " kilometres = " + str(round(miles,3)) + " miles")
+        LBL(f"{kilometres} kilometres = {miles:.3f} miles")
     elif lengthKilometreMenu == 12:
         nauticalMiles = kilometres/1.852
-        print(str(kilometres) + " kilometres = " + str(round(nauticalMiles,3)) + " nautical miles")
+        LBL(f"{kilometres} kilometres = {nauticalMiles:.3f} nautical miles")
     elif lengthKilometreMenu == 13:
         convertLength()
     elif lengthKilometreMenu == 14:
