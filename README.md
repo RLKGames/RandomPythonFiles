@@ -5,7 +5,7 @@ Latest version = v3.0
 > For v1.4.1 and earlier, you need atleast python 1.0 installed
 
 > [!NOTE]
-> I use python 3.12.3
+> I use python 3.12.3 in VSCode on Linux Mint
 
 This is a collection of random python files that I've made
 
