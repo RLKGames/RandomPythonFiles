@@ -11,7 +11,7 @@ def errorPrint(errorID):
 
 # one by one character printer
 def LBL(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -19,7 +19,7 @@ def LBL(printInput):
 
 # one by one character printer with input
 def LBLInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -28,7 +28,7 @@ def LBLInput(printInput):
 
 # one by one character printer with integer input
 def LBLIntInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -37,8 +37,8 @@ def LBLIntInput(printInput):
 
 # quit program
 def quitProgram():
-        LBL("\nQuitting\n")
-        quit()
+    LBL("\nQuitting")
+    quit()
 
 # print output to file
 def printToFile(dateTimeNow, output):
@@ -50,6 +50,7 @@ def printToFile(dateTimeNow, output):
 # dice
 def diceRoll():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+    LBL("Welcome to dice roller!")
     diceSides = LBLIntInput("How many sides should the dice have? ")
     diceCount = LBLIntInput("How many dice should be rolled? ")
     count = 0

@@ -10,25 +10,25 @@ def errorPrint(errorID):
 
 # one by one character printer
 def LBL(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.005)
     print()
 
 # one by one character printer with input
 def LBLInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.005)
     output = input()
     return output
 
 # quit program
 def quitProgram():
-        LBL("\nQuitting...")
-        quit()
+    LBL("\nQuitting")
+    quit()
 
 # wait
 def wait():
@@ -37,6 +37,7 @@ def wait():
 # rock paper scissors
 def rps():
     com1 = random.randint(1,3)
+    LBL("Welcome to rock paper scissors!")
     p1 = LBLInput("Choose rock paper or scissors ")
     # rock
     if p1 == "1" or p1 == "r" or p1 == "rock":
@@ -103,6 +104,9 @@ def rps():
                 errorPrint(2)
     else:
         errorPrint(3)
+    
+    print()
+    runAgain()
 
 # run again prompt
 def runAgain():

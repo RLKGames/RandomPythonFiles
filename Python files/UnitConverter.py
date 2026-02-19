@@ -9,7 +9,7 @@ def errorPrint(errorID):
 
 # one by one character printer
 def LBL(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -17,7 +17,7 @@ def LBL(printInput):
 
 # one by one character printer with input
 def LBLInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -26,7 +26,7 @@ def LBLInput(printInput):
 
 # one by one character printer with integer input
 def LBLIntInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -35,19 +35,17 @@ def LBLIntInput(printInput):
 
 # one by one character printer with integer input
 def LBLFloatInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
     output = float(input())
     return output
 
-placeholder = 1
-
-
 # Length Converter
 def convertLength():
     LBL("""
+
 Convert from:
     1) Picometre
     2) Nanometre
@@ -112,6 +110,7 @@ def convertLengthAgain():
 # Length Converter - Picometre
 def convertLengthPicometre():
     LBL("""
+
 Convert to:
     1) Nanometre
     2) Micrometre
@@ -177,6 +176,7 @@ Convert to:
 # Length Converter - Nanometre
 def convertLengthNanometre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Micrometre
@@ -242,6 +242,7 @@ Convert to:
     # Length Converter - Micrometre
 def convertLengthMicrometre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Nanometre
@@ -307,6 +308,7 @@ Convert to:
     # Length Converter - Millimetre
 def convertLengthMillimetre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Nanometre
@@ -372,6 +374,7 @@ Convert to:
     # Length Converter - Centimetre
 def convertLengthCentimetre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Nanometre
@@ -437,6 +440,7 @@ Convert to:
     # Length Converter - Decimetre
 def convertLengthDecimetre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Nanometre
@@ -502,6 +506,7 @@ Convert to:
     # Length Converter - Metre
 def convertLengthMetre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Nanometre
@@ -567,6 +572,7 @@ Convert to:
     # Length Converter - Kilometre
 def convertLengthKilometre():
     LBL("""
+
 Convert to:
     1) Picometre
     2) Nanometre
@@ -630,15 +636,14 @@ Convert to:
         quitProgram()
 
 
-
 # quit program
 def quitProgram():
-        LBL("\nQuitting\n")
-        quit()
+    LBL("\nQuitting")
+    quit()
 
 # main menu
 def mainMenu():
-    LBL("""
+    LBL("""Welcome to unit converter!
 Main menu:
     1) Length
     2) Area (Not finished)

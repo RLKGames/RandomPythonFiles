@@ -10,7 +10,7 @@ def errorPrint(errorID):
 
 # one by one character printer
 def LBL(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -18,7 +18,7 @@ def LBL(printInput):
 
 # one by one character printer with input
 def LBLInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -27,7 +27,7 @@ def LBLInput(printInput):
 
 # one by one character printer with integer input
 def LBLIntInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -36,12 +36,13 @@ def LBLIntInput(printInput):
 
 # quit program
 def quitProgram():
-        LBL("\nQuitting\n")
-        quit()
+    LBL("\nQuitting")
+    quit()
 
 # number guessing game
 def numGuess():
     correct = False
+    LBL("Welcome to number guessing game!")
     highestNum = LBLIntInput("What should the highest number be? ")
     if highestNum <= 1:
         LBL("The number has to be more than 1")

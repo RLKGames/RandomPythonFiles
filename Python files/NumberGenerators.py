@@ -11,7 +11,7 @@ def errorPrint(errorID):
 
 # one by one character printer
 def LBL(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -19,7 +19,7 @@ def LBL(printInput):
 
 # one by one character printer with input
 def LBLInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -28,7 +28,7 @@ def LBLInput(printInput):
 
 # one by one character printer with integer input
 def LBLIntInput(printInput):
-    for x in (str(printInput)):
+    for x in str(printInput):
         sys.stdout.write(x)
         sys.stdout.flush()
         time.sleep(0.005)
@@ -167,12 +167,12 @@ def randomNumGen():
 
 # quit program
 def quitProgram():
-        LBL("\nQuitting\n")
-        quit()
+    LBL("\nQuitting")
+    quit()
 
 # main menu
 def mainMenu():
-    LBL("""
+    LBL("""Welcome to number generator!
 Main Menu:
     1) Prime number generator
     2) Exponent of number generator
