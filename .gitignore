@@ -4,7 +4,7 @@ Python files/.python-version
 CoinFlipOutput-*.txt
 DiceRollOutput-*.txt
 PrimeNumGenOutput-*.txt
-ExponentOfNumOutput-*.txt
-ExponentNumOutput-*.txt
+ExponentOfNumGenOutput-*.txt
+ExponentNumGenOutput-*.txt
 NumFactorGenOutput-*.txt
 RandomNumGenOutput-*.txt
