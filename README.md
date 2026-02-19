@@ -1,7 +1,4 @@
-Latest version = v2.1
-
-> [!WARNING]
-> Exponent of number generator in NumberGenerators.py is broken. It will be fixed in v2.2
+Latest version = v3.0
 
 > [!IMPORTANT]
 > For v2.0 and later, you need atleast python 3.10 installed  
@@ -21,8 +18,9 @@ This is a collection of random python files that I've made
 - Random number generator - generates a specified amount of random numbers in the range your specify
 
 ### Others
-- rockPaperScissors.py - play rock paper scissors against a computer
-- numberGuessingGame.py - guess a random number in a range you specify
-- unitConverter.py - converts between various units (can currently only convert between metric length units, more will added in v2.2)
-- coinFlip.py - flip a specified number of coins
-- diceRoll.py - roll a specified number of dice with a specified number of faces
+- NumberGuessingGame.py - guess a random number in a range you specify
+- RockPaperScissors.py - play rock paper scissors against a computer
+- CoinFlip.py - flip a specified number of coins
+- DiceRoll.py - roll a specified number of dice with a specified number of faces
+- UnitConverter.py - converts between various units (can currently only convert between metric length units, more will added in v3.1)
+- TicTacToe.py - Play tic tac toe / naughts and crosses / Xs and Os or whatever you call it against a computer (will be added in v3.1)
