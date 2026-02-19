@@ -657,7 +657,7 @@ Main menu:
     10) Force (Not finished)
     11) Temperature (Not finished)
     12) Quit
-    """)
+""")
     mainMenu = LBLIntInput("Chose from options 1 - 12: ")
     if mainMenu == 1:
         convertLength()

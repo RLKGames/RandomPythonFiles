@@ -180,7 +180,7 @@ Main Menu:
     4) Number factors generator
     5) Random number generator
     6) Quit
-    """)
+""")
     mainMenu = LBLIntInput("Chose from options 1, 2, 3, 4, 5 and 6: ")
     if mainMenu == 1:
         primeNumberGen()
