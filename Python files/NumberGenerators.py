@@ -2,6 +2,7 @@ import datetime
 import random
 import sys
 import time
+import math
 
 # error printer
 def errorPrint(errorID):
@@ -40,18 +41,18 @@ def printToFile(dateTimeNow, generator, output):
     print(output)
     match generator:
         case "prime":
-            filePath = "PrimeNumGenOutput-" + str(dateTimeNow) + ".txt"
+            filePath = f"PrimeNumGenOutput-{dateTimeNow}.txt"
         case "exponentOf":
-            filePath = "ExponentOfNumGenOutput-" + str(dateTimeNow) + ".txt"
+            filePath = f"ExponentOfNumGenOutput-{dateTimeNow}.txt"
         case "exponent":
-            filePath = "ExponentNumGenOutput-" + str(dateTimeNow) + ".txt"
+            filePath = f"ExponentNumGenOutput-{dateTimeNow}.txt"
         case "factors":
-            filePath = "NumFactorGenOutput-" + str(dateTimeNow) + ".txt"
+            filePath = f"NumFactorGenOutput-{dateTimeNow}.txt"
         case "random":
-            filePath = "RandomNumGenOutput-" + str(dateTimeNow) + ".txt"
+            filePath = f"RandomNumGenOutput-{dateTimeNow}.txt"
 
     with open(filePath, "a") as f:
-        f.write(output + "\n")
+        f.write(f"{output}\n")
 
 
 # prime number generator
@@ -72,70 +73,65 @@ def primeNumberGen():
         printToFile(dateTimeNow, "prime", output)
     for numChecking in range(lowestNum, highestNum + 1, 2):
         factorCount = 2
-        if numChecking % 2 != 0 and numChecking != 1 and numChecking != 3:
-            # print("numChecking = " + str(numChecking)) # debug only
+        if numChecking % 2 != 0 and numChecking > 3:
+            # print(f"numChecking = {numChecking}") # debug only
             for numAgainst in range(2, int((numChecking+1)/2)+2):
-                # print("numAgainst = " + str(numAgainst)) # debug only
+                # print(f"numAgainst = {numAgainst}") # debug only
                 if numChecking % numAgainst == 0:
                     factorCount += 1
-                    # print("factorCount = " + str(factorCount)) # debug only
+                    # print(f"factorCount = {factorCount}") # debug only
                 # else: # debug only
                     # print("Not a factor") # debug only
             if factorCount == 2:
                 num += 1
-                output = str(numChecking) + " is prime"
+                output = f"{numChecking} is prime"
                 printToFile(dateTimeNow, "prime", output)
     endTime = time.perf_counter()
-    timeTaken = round(endTime - startTime, 2)
-    output = str(num) + " numbers have been generated\nTook: " + str(timeTaken) + "s"
+    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, "prime", output)
 
 # exponent of a number generator
 def exponentOfNumGen():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-    LBL("\n\nExponent generator")
-    LBL("(I'm gonna be honest, the phrasing of this entire exponent generator is terrible because I don't know how to phrase it properly. If a mathematician wanted to help me, that'd be much appreciated)")
-    exponent = LBLIntInput("Enter the exponent as a number (e.g. 2, 3, 4, etc etc) ")
-    LBL("\nPower of " + str(exponent) + " generator:")
-    lowestNum = LBLIntInput("What is the lowest number in the range you would like to check? ")
-    highestNum = LBLIntInput("What is the highest number in the range you would like to check? ")
-    num = 0
+    LBL("\n\nExponent of a number generator")
+    LBL("Being honest, the phrasing of this generator is terrible. If a mathematician wants to help me, that'd be appreciated!")
+    numChecking = LBLIntInput("What number would you like to check? ")
+    maxExponent = LBLIntInput("What exponent would you like to go up to? ")
+    num = 1
+    answer = numChecking
     startTime = time.perf_counter()
-    for numChecking in range(lowestNum, highestNum + 1):
-        # print("numChecking = " + str(numChecking)) # debug only
-        root = round(numChecking ** (1/exponent), 8)
-        # print("root = " + str(root)) # debug only
-        if root.is_integer() == True:
-            num += 1
-            output = str(numChecking) + " is an integer which can be gotten from raising another integer to the power of " + str(exponent)
-            printToFile(dateTimeNow, "exponent", output)
+    for i in range(1, maxExponent):
+        answer = answer * numChecking
+        num += 1
+        output = f"{answer} is gotten when raising {numChecking} to the power of {num}"
+        printToFile(dateTimeNow, "exponentOf", output)
     endTime = time.perf_counter()
-    timeElapsed = round(endTime - startTime, 2)
-    output = str(num) + " numbers have been generated\nTook: " + str(timeElapsed) + "s"
+    output = f"Took: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, "exponentOf", output)
 
 # exponent number generator
 def exponentNumGen():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-    LBL("\n\nExponent generator")
-    LBL("(I'm gonna be honest, the phrasing of this entire exponent number generator is terrible because I don't know how to phrase it properly. If a mathematician wanted to help me, that'd be much appreciated)")
+    LBL("\n\nExponent number generator")
+    LBL("Being honest, the phrasing of this generator is terrible. If a mathematician wants to help me, that'd be appreciated!")
     exponent = LBLIntInput("Enter the exponent as a number (e.g. 2, 3, 4, etc etc) ")
-    LBL("\nPower of " + str(exponent) + " generator:")
+    LBL(f"\nPower of {exponent} generator:")
     lowestNum = LBLIntInput("What is the lowest number in the range you would like to check? ")
     highestNum = LBLIntInput("What is the highest number in the range you would like to check? ")
     num = 0
     startTime = time.perf_counter()
+
     for numChecking in range(lowestNum, highestNum + 1):
         # print("numChecking = " + str(numChecking)) # debug only
         root = round(numChecking ** (1/exponent), 8)
         # print("root = " + str(root)) # debug only
         if root.is_integer() == True:
             num += 1
-            output = str(numChecking) + " is an integer which can be gotten from raising another integer to the power of " + str(exponent)
+            output = f"{numChecking} is an integer which can be gotten from raising another integer to the power of {exponent}"
             printToFile(dateTimeNow, "exponent", output)
+    
     endTime = time.perf_counter()
-    timeElapsed = round(endTime - startTime, 2)
-    output = str(num) + " numbers have been generated\nTook: " + str(timeElapsed) + "s"
+    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, "exponent", output)
 
 # number factors generator
@@ -143,18 +139,18 @@ def numberFactorsGen():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     LBL("\n\nNumber factor generator:")
     numChecking = LBLIntInput("What number would you like to check? ")
-    num = 0
+    num = 1
     startTime = time.perf_counter()
-
-    for numAgainst in range(1, numChecking + 1):
+    for numAgainst in range(1, int(round((numChecking+1)/2))+1):
         if numChecking % numAgainst == 0:
             num += 1
-            output = (str(numAgainst) + " is a factor of " + str(numChecking))
+            output = f"{numAgainst} is a factor of {numChecking}"
             printToFile(dateTimeNow, "factors", output)
+    output = f"{numChecking} is a factor of {numChecking}"
+    printToFile(dateTimeNow, "factors", output)
     
     endTime = time.perf_counter()
-    timeElapsed = round(endTime - startTime, 2)
-    output = str(num) + " numbers have been generated\nTook: " + str(timeElapsed) + "s"
+    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, "factors", output)
 
 # random number generator
@@ -169,11 +165,10 @@ def randomNumGen():
     for i in range(1, genNum+1):
         num += 1
         randNum = random.randint(lowestNum, highestNum)
-        output = ("The random number generated is " + str(randNum))
+        output = f"Random number {num} is {randNum}"
         printToFile(dateTimeNow, "random", output)
     endTime = time.perf_counter()
-    timeElapsed = round(endTime - startTime, 2)
-    output = str(num) + " numbers have been generated\nTook: " + str(timeElapsed) + "s"
+    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, "random", output)
 
 # quit program
