@@ -73,14 +73,9 @@ def primeNumberGen():
     for numChecking in range(lowestNum, highestNum + 1, 2):
         factorCount = 2
         if numChecking % 2 != 0 and numChecking > 3:
-            # print(f"numChecking = {numChecking}") # debug only
             for numAgainst in range(2, int((numChecking+1)/2)+2):
-                # print(f"numAgainst = {numAgainst}") # debug only
                 if numChecking % numAgainst == 0:
                     factorCount += 1
-                    # print(f"factorCount = {factorCount}") # debug only
-                # else: # debug only
-                    # print("Not a factor") # debug only
             if factorCount == 2:
                 num += 1
                 output = f"{numChecking} is prime"
