@@ -43,9 +43,9 @@ def quitProgram():
 # print output to file
 def printToFile(dateTimeNow, output):
     print(output)
-    filePath = "CoinFlipOutput-" + str(dateTimeNow) + ".txt"
+    filePath = f"CoinFlipOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(output + "\n")
+        f.write(f"{output}\n")
 
 # coin
 def coinFlip():
@@ -59,22 +59,21 @@ def coinFlip():
         coinFlip = random.randint(1, 2)
         count += 1
         if coinFlip == 1:
-            output = "Coin number " + str(count) + " landed on heads"
+            output = f"Coin number {count} landed on heads"
             printToFile(dateTimeNow, output)
             heads += 1
         elif coinFlip == 2:
-            output = "Coin number " + str(count) + " landed on tails"
+            output = f"Coin number {count} landed on tails"
             printToFile(dateTimeNow, output)
             tails += 1
 
-    output = str(heads) + " coin(s) landed on heads"
+    output = f"{heads} coins landed on heads"
     printToFile(dateTimeNow, output)
-    output = str(tails) + " coin(s) landed on tails"
+    output = f"{tails} coins landed on tails"
     printToFile(dateTimeNow, output)
 
     endTime = time.perf_counter()
-    timeTaken = round(endTime - startTime, 2)
-    output = "Took: " + str(timeTaken) + "s"
+    output = f"Took: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, output)
 
     runAgain()
@@ -87,4 +86,5 @@ def runAgain():
     else:
         quitProgram()
 
+# main block
 coinFlip()
