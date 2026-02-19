@@ -2,7 +2,6 @@ import datetime
 import random
 import sys
 import time
-import math
 
 # error printer
 def errorPrint(errorID):
