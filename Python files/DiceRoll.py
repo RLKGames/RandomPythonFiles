@@ -43,9 +43,9 @@ def quitProgram():
 # print output to file
 def printToFile(dateTimeNow, output):
     print(output)
-    filePath = "DiceRollOutput-" + str(dateTimeNow) + ".txt"
+    filePath = f"DiceRollOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(output + "\n")
+        f.write(f"{output}\n")
 
 # dice
 def diceRoll():
@@ -57,12 +57,11 @@ def diceRoll():
     for i in range(0, diceCount):
         diceRoll = random.randint(0, diceSides-1)
         count += 1
-        output = "Dice number " + str(count) + " rolled " + str(diceRoll+1)
+        output = f"Dice number {count} rolled {diceRoll}"
         printToFile(dateTimeNow, output)
 
     endTime = time.perf_counter()
-    timeTaken = round(endTime - startTime, 2)
-    output = "Took: " + str(timeTaken) + "s"
+    output = f"Took: {endTime - startTime:.2f}s"
     printToFile(dateTimeNow, output)
 
     runAgain()
@@ -75,4 +74,5 @@ def runAgain():
     else:
         quitProgram()
 
+# main block
 diceRoll()
