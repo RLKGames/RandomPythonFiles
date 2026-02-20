@@ -12,7 +12,7 @@ This is a collection of random python files that I've made
 ## These are the files in the collection
 ### NumberGenerators.py
 - Prime number generator - generates all prime numbers in the range you specify
-- Exponent of number generator - generates the number you specify multiplied by itself the specified amount of times (broken in v2.1, will be fixed in v2.2)
+- Exponent of number generator - generates the number you specify multiplied by itself the specified amount of times
 - Exponent number generator - generates all numbers in a range you that specify that can be gotten by raising an integer to the power that you specify
 - Number factors generator - generates a list of all of the factors of a number
 - Random number generator - generates a specified amount of random numbers in the range your specify
@@ -23,4 +23,5 @@ This is a collection of random python files that I've made
 - CoinFlip.py - flip a specified number of coins
 - DiceRoll.py - roll a specified number of dice with a specified number of faces
 - UnitConverter.py - converts between various units (can currently only convert between metric length units, more will added in v3.1)
-- TicTacToe.py - Play tic tac toe / naughts and crosses / Xs and Os or whatever you call it against a computer (will be added in v3.1)
+- Counter.py - press enter to increment counter, type anything to stop counter (will be added in v3.1)
+- TicTacToe.py - play tic tac toe / naughts and crosses / Xs and Os or whatever you call it against a computer (will be added in v3.1)
