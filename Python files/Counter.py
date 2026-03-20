@@ -32,10 +32,10 @@ def quitProgram():
 # main menu
 def counter():
     count = 0
-    input = ""
-    while input == "":
-        input = input("Press enter to increment counter, type anything to finish ")
-        if input == "":
+    increment = ""
+    while increment == "":
+        increment = input("Press enter to increment counter, type anything to finish ")
+        if increment == "":
             count += 1
             print(f"Counter: {count}")
     LBL(f"Final counter: {count}\n")
