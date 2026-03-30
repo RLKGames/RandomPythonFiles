@@ -1,10 +1,4 @@
 
 Python files/.python-version
 .vscode/settings.json
-CoinFlipOutput-*.txt
-DiceRollOutput-*.txt
-PrimeNumGenOutput-*.txt
-ExponentOfNumGenOutput-*.txt
-ExponentNumGenOutput-*.txt
-NumFactorGenOutput-*.txt
-RandomNumGenOutput-*.txt
+*Output-*.txt
