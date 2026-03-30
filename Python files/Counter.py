@@ -1,5 +1,6 @@
 import sys
 import time
+import datetime
 
 # error printer
 def errorPrint(errorID):
@@ -29,8 +30,16 @@ def quitProgram():
     LBL("\nQuitting")
     quit()
 
+# print output to file
+def printToFile(dateTimeNow, output):
+    print(output)
+    filePath = f"incrementalCounterOutput-{dateTimeNow}.txt"
+    with open(filePath, "a") as f:
+        f.write(f"{output}\n")
+
 # main menu
 def counter():
+    dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     count = 0
     increment = ""
     while increment == "":
@@ -38,7 +47,7 @@ def counter():
         if increment == "":
             count += 1
             print(f"Counter: {count}")
-    LBL(f"Final counter: {count}\n")
+    printToFile(dateTimeNow, f"Final counter: {count}\n")
     runAgain()
 
 # run again prompt
