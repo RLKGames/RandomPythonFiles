@@ -5,7 +5,7 @@ import os
 
 # error printer
 def errorPrint(errorID):
-    f = open("Python files/ErrorCodes.txt")
+    f = open("Python files/Additional files/ErrorCodes.txt")
     errorPrint = f.readlines(errorID).replace("[", "").replace("]", "").replace("\\n", "").replace("'", "")
     f.readlines(errorID)
 
