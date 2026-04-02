@@ -3,12 +3,6 @@ import random
 import sys
 import time
 
-# error printer
-def errorPrint(errorID):
-    f = open("Python files/Additional files/ErrorCodes.txt")
-    errorPrint = f.readlines(errorID).replace("[", "").replace("]", "").replace("\\n", "").replace("'", "")
-    f.readlines(errorID)
-
 # one by one character printer
 def LBL(printInput):
     for x in str(printInput):
