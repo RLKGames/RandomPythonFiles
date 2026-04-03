@@ -3,6 +3,8 @@ import random
 import sys
 import time
 
+outputList = []
+
 # one by one character printer
 def LBL(printInput):
     for x in str(printInput):
@@ -31,20 +33,23 @@ def LBLIntInput(printInput):
 
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
-# print output to file
-def printToFile(dateTimeNow, output):
+# print output
+def printOutput(output):
     print(output)
+    outputList.append(output)
+
+# print output to file
+def printToFile(dateTimeNow):
     filePath = f"CoinFlipOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(f"{output}\n")
+        f.write(outputList)
 
-# coin
+# coin flip
 def coinFlip():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-    LBL("Welcome to my coin flipper!")
     diceCount = LBLIntInput("How many coins should be flipped? ")
     count = 0
     heads = 0
@@ -54,32 +59,32 @@ def coinFlip():
         coinFlip = random.randint(1, 2)
         count += 1
         if coinFlip == 1:
-            output = f"Coin number {count} landed on heads"
-            printToFile(dateTimeNow, output)
+            printOutput(f"Coin number {count} landed on heads")
             heads += 1
         elif coinFlip == 2:
-            output = f"Coin number {count} landed on tails"
-            printToFile(dateTimeNow, output)
+            printOutput(f"Coin number {count} landed on tails")
             tails += 1
-
-    output = f"{heads} coins landed on heads"
-    printToFile(dateTimeNow, output)
-    output = f"{tails} coins landed on tails"
-    printToFile(dateTimeNow, output)
-
     endTime = time.perf_counter()
-    output = f"Took: {endTime - startTime:.2f}s"
-    printToFile(dateTimeNow, output)
+    printOutput(f"{heads} coins landed on heads")
+    printOutput(f"{tails} coins landed on tails")
+    printOutput(f"Took: {endTime - startTime:.2f}s")
+    printToFile(dateTimeNow)
+    mainMenu()
 
-    runAgain()
-
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("\n\nWould you like to flip coins again? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
+def mainMenu():
+    LBL("""Welcome to my coin flipper!
+Main Menu:
+P) Play
+I) Info
+Q) Quit\n""")
+    menu = LBLInput("Chose from options P, I or Q: ").upper()
+    if menu == "P":
         coinFlip()
-    else:
+    elif menu == "I":
+        LBL("Not finished yet!")
+    elif menu == "Q":
         quitProgram()
+    mainMenu()
 
 # main block
 coinFlip()
