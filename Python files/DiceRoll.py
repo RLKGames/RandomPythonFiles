@@ -3,6 +3,8 @@ import random
 import sys
 import time
 
+outputList = []
+
 # one by one character printer
 def LBL(printInput):
     for x in str(printInput):
@@ -31,43 +33,52 @@ def LBLIntInput(printInput):
 
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
-# print output to file
-def printToFile(dateTimeNow, output):
+# print output
+def printOutput(output):
     print(output)
+    outputList.append(output)
+
+# print output to file
+def printToFile(dateTimeNow):
     filePath = f"DiceRollOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(f"{output}\n")
+        f.write(outputList)
 
-# dice
+# dice roller
 def diceRoll():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-    LBL("Welcome to dice roller!")
     diceSides = LBLIntInput("How many sides should the dice have? ")
     diceCount = LBLIntInput("How many dice should be rolled? ")
     count = 0
+    total = 0
     startTime = time.perf_counter()
     for i in range(0, diceCount):
-        diceRoll = random.randint(0, diceSides-1)
+        diceRoll = random.randint(1, diceSides)
         count += 1
-        output = f"Dice number {count} rolled {diceRoll}"
-        printToFile(dateTimeNow, output)
-
+        total += diceRoll
+        printOutput(f"Dice number {count} rolled {diceRoll}")
     endTime = time.perf_counter()
-    output = f"Took: {endTime - startTime:.2f}s"
-    printToFile(dateTimeNow, output)
+    printOutput(f"{count} dice rolled\nThe average dice roll was: {total/count:.3f}\nTook: {endTime - startTime:.2f}s")
+    printToFile(dateTimeNow)
+    mainMenu()
 
-    runAgain()
-
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("\n\nWould you like to roll dice again? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
+def mainMenu():
+    LBL("""Welcome to my dice roller!
+Main Menu:
+P) Play
+I) Info
+Q) Quit\n""")
+    menu = LBLInput("Chose from options P, I or Q: ").upper()
+    if menu == "P":
         diceRoll()
-    else:
+    elif menu == "I":
+        LBL("Not finished yet!")
+    elif menu == "Q":
         quitProgram()
+    mainMenu()
 
-# main block
-diceRoll()
+# main code
+mainMenu()
