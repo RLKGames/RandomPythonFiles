@@ -56,18 +56,17 @@ def runFile(file):
     print("\n\n\n\n")
     subprocess.run([sys.executable, filePath])
 
-
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
 # info print
 def infoPrint():
-    LBLQuick("""Info:
+    LBL("""\nInfo:
 (1) NumberGenerators.py
 - Prime number generator - generates all prime numbers in the range you specify
-- Exponent of number generator - generates the number you specify multiplied by itself the specified amount of times (broken in v2.1, will be fixed in v2.2)
+- Exponent of number generator - generates the number you specify multiplied by itself the specified amount of times
 - Exponent number generator - generates all numbers in a range you that specify that can be gotten by raising an integer to the power that you specify
 - Number factors generator - generates a list of all of the factors of a number
 - Random number generator - generates a specified amount of random numbers in the range your specify
@@ -77,11 +76,9 @@ Others
 - (3) RockPaperScissors.py - play rock paper scissors against a computer
 - (4) CoinFlip.py - flip a specified number of coins
 - (5) DiceRoll.py - roll a specified number of dice with a specified number of faces
-- (6) UnitConverter.py - converts between various units (can currently only convert between metric length units, more will added in v3.1)
-- TicTacToe.py - Play tic tac toe / naughts and crosses / Xs and Os or whatever you call it against a computer (will be added in v3.1)""")
-
-    runAgain()
-
+- (6) UnitConverter.py - converts between various units (can currently only convert between metric length units, more will added soon)
+- TicTacToe.py - Play tic tac toe / naughts and crosses / Xs and Os or whatever you call it against a computer (will be added soon)""")
+    mainMenu()
 
 # main menu
 def mainMenu():
@@ -93,43 +90,27 @@ Main Menu:
     4) CoinFlip.py
     5) DiceRoll.py
     6) UnitConverter.py
-    7) Info
-    8) Quit
+    I) Info
+    Q) Quit
 """)
-    mainMenu = LBLIntInput("Chose from options 1, 2, 3, 4, 5 and 6: ")
-    if mainMenu == 1:
+    menu = LBLInput("Chose from options 1-6, I and Q: ").upper()
+    if menu == "1":
         runFile("NumGen")
-
-    elif mainMenu == 2:
+    elif menu == "2":
         runFile("NumGuess")
-
-    elif mainMenu == 3:
+    elif menu == "3":
         runFile("RPS")
-
-    elif mainMenu == 4:
+    elif menu == "4":
         runFile("CoinFlip")
-
-    elif mainMenu == 5:
+    elif menu == "5":
         runFile("DiceRoll")
-
-    elif mainMenu == 6:
+    elif menu == "6":
         runFile("UnitConvert")
-
-    elif mainMenu == 7:
+    elif menu == "I":
         infoPrint()
-
-    elif mainMenu == 8:
+    elif menu == "Q":
         quitProgram()
-
-    runAgain()
-
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("Would you like to go back to the main menu? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
-        mainMenu()
-    else:
-        quitProgram()
+    mainMenu()
 
 # main code
 mainMenu()
