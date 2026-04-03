@@ -21,7 +21,7 @@ def LBLInput(printInput):
 
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
 # wait
@@ -30,13 +30,12 @@ def wait():
 
 # rock paper scissors
 def rps():
-    com1 = random.randint(1,3)
-    LBL("Welcome to rock paper scissors!")
-    p1 = LBLInput("Choose rock paper or scissors ")
+    com = random.randint(1,3)
+    player = LBLInput("Choose rock, paper or scissors ")
     # rock
-    if p1 == "1" or p1 == "r" or p1 == "rock":
+    if player == "r" or player == "rock":
         LBL("You chose rock")
-        match com1:
+        match com:
             case 1:
                 wait()
                 LBL("The computer chose rock")
@@ -53,9 +52,9 @@ def rps():
                 wait()
                 LBL("You won!")
     # paper
-    elif p1 == "2" or p1 == "p" or p1 == "paper":
+    elif player == "p" or player == "paper":
         LBL("You chose paper")
-        match com1:
+        match com:
             case 1:
                 wait()
                 LBL("The computer chose rock")
@@ -72,9 +71,9 @@ def rps():
                 wait()
                 LBL("You lost!")
     # scissors
-    elif p1 == "3" or p1 == "s" or p1 == "scissors":
+    elif player == "s" or player == "scissors":
         LBL("You chose scissors")
-        match com1:
+        match com:
             case 1:
                 wait()
                 LBL("The computer chose rock")
@@ -90,17 +89,24 @@ def rps():
                 LBL("The computer chose scissors")
                 wait()
                 LBL("You drew!")
-    
-    print()
-    runAgain()
-
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("Would you like to play again? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
-        rps()
     else:
+        LBL("Please choose rock, paper or scissors!")
+    mainMenu()
+
+def mainMenu():
+    LBL("""Welcome to rock paper scissors!
+Main Menu:
+P) Play
+I) Info
+Q) Quit\n""")
+    menu = LBLInput("Chose from options P, I or Q: ")
+    if menu == "P":
+        rps()
+    elif menu == "I":
+        LBL("Not finished yet!")
+    elif menu == "Q":
         quitProgram()
+    mainMenu()
 
 # main code
-rps()
+mainMenu()
