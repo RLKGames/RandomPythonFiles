@@ -596,5 +596,5 @@ Q) Quit\n""")
         quitProgram()
     mainMenu()
 
-# main block
+# main code
 mainMenu()

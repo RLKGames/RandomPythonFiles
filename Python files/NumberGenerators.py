@@ -51,7 +51,7 @@ def printToFile(dateTimeNow, generator):
         case "random":
             filePath = f"RandomNumGenOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(f"{outputList}\n")
+        f.write(outputList)
 
 # prime number generator
 def primeNumberGen():
