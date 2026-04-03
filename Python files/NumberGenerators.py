@@ -92,11 +92,10 @@ def exponentOfNumGen():
     for i in range(1, maxExponent):
         answer = answer * numChecking
         num += 1
-        output = f"{answer} is gotten when raising {numChecking} to the power of {num}"
-        printToFile(dateTimeNow, "exponentof", output)
+        printOutput(f"{answer} is gotten when raising {numChecking} to the power of {num}")
     endTime = time.perf_counter()
-    output = f"Took: {endTime - startTime:.2f}s"
-    printToFile(dateTimeNow, "exponentof", output)
+    printOutput(f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s")
+    printToFile(dateTimeNow, "exponentof")
 
 # exponent number generator
 def exponentNumGen():
@@ -109,17 +108,14 @@ def exponentNumGen():
     highestNum = LBLIntInput("What is the highest number in the range you would like to check? ")
     num = 0
     startTime = time.perf_counter()
-    for numChecking in range(lowestNum, highestNum + 1):
-        # print("numChecking = " + str(numChecking)) # debug only
+    for numChecking in range(lowestNum, highestNum+1):
         root = round(numChecking ** (1/exponent), 8)
-        # print("root = " + str(root)) # debug only
         if root.is_integer() == True:
             num += 1
-            output = f"{numChecking} is an integer which can be gotten from raising another integer to the power of {exponent}"
-            printToFile(dateTimeNow, "exponent", output)
+            printOutput(f"{numChecking} is an integer which can be gotten from raising another integer to the power of {exponent}")
     endTime = time.perf_counter()
-    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
-    printToFile(dateTimeNow, "exponent", output)
+    printOutput(f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s")
+    printToFile(dateTimeNow, "exponent")
 
 # number factors generator
 def numberFactorsGen():
@@ -131,13 +127,10 @@ def numberFactorsGen():
     for numAgainst in range(1, int(round((numChecking+1)/2))+1):
         if numChecking % numAgainst == 0:
             num += 1
-            output = f"{numAgainst} is a factor of {numChecking}"
-            printToFile(dateTimeNow, "factors", output)
-    output = f"{numChecking} is a factor of {numChecking}"
-    printToFile(dateTimeNow, "factors", output)
+            printOutput(f"{numAgainst} is a factor of {numChecking}")
     endTime = time.perf_counter()
-    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
-    printToFile(dateTimeNow, "factors", output)
+    printOutput(f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s")
+    printToFile(dateTimeNow, "factors")
 
 # random number generator
 def randomNumGen():
@@ -151,64 +144,43 @@ def randomNumGen():
     for i in range(1, genNum+1):
         num += 1
         randNum = random.randint(lowestNum, highestNum)
-        output = f"Random number {num} is {randNum}"
-        printToFile(dateTimeNow, "random", output)
+        printOutput(f"Random number {num} is {randNum}")
     endTime = time.perf_counter()
-    output = f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s"
-    printToFile(dateTimeNow, "random", output)
-
-# info
-def info():
-    pass
+    printOutput(f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s")
+    printToFile(dateTimeNow, "random")
 
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
 # main menu
 def mainMenu():
     LBL("""Welcome to number generator!
 Main Menu:
-    1) Prime number generator
-    2) Exponent of number generator
-    3) Exponent number generator
-    4) Number factors generator
-    5) Random number generator
-    I) Info
-    Q) Quit
-""")
-    mainMenu = LBLInput("Chose from options 1, 2, 3, 4, 5 and 6: ").lower()
-    if mainMenu == "1":
+1) Prime number generator
+2) Exponent of number generator
+3) Exponent number generator
+4) Number factors generator
+5) Random number generator
+I) Info
+Q) Quit\n""")
+    menu = LBLInput("Chose from options 1-5, I or Q: ").lower()
+    if menu == "1":
         primeNumberGen()
-
-    elif mainMenu == "2":
+    elif menu == "2":
         exponentOfNumGen()
-
-    elif mainMenu == "3":
+    elif menu == "3":
         exponentNumGen()
-
-    elif mainMenu == "4":
+    elif menu == "4":
         numberFactorsGen()
-
-    elif mainMenu == "5":
+    elif menu == "5":
         randomNumGen()
-
-    elif mainMenu == "I":
-        info()
-
-    elif mainMenu == "Q":
+    elif menu == "I":
+        LBL("Not finished yet!")
+    elif menu == "Q":
         quitProgram()
-
-    runAgain()
-
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("Would you like to go back to the main menu? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
-        mainMenu()
-    else:
-        quitProgram()
+    mainMenu()
 
 # main code
 mainMenu()
