@@ -30,50 +30,45 @@ def LBLIntInput(printInput):
 
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
 # number guessing game
 def numGuess():
     correct = False
-    LBL("Welcome to number guessing game!")
+    attempts = 0
     highestNum = LBLIntInput("What should the highest number be? ")
     if highestNum <= 1:
         LBL("The number has to be more than 1")
-        quit()
-    num = random.randint(1,highestNum)
-
-    while correct == False:
-        correct = guessNum(highestNum, num)
-    runAgain()
-
-# guess numbers
-def guessNum(highestNum, num):
-    correct = False
-    attempts = 0
-    # print("num = " + str(num)) # debug only
-    guess = LBLIntInput("\nEnter a guess between 1 and " + str(highestNum) + " ")
-    attempts += 1
-
-    if guess > num:
-        LBL("Too high")
-    elif guess < num:
-        LBL("Too low")
-    elif guess == num:
-        LBL("Correct!")
-        LBL("You took " + str(attempts) + " attempts to guess a random number between 1 and " + str(highestNum))
-        correct = True
-    else:
-        errorPrint(1)
-    return correct
-
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("Would you like to play again? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
         numGuess()
-    else:
+    num = random.randint(1,highestNum)
+    while correct == False:
+        guess = LBLIntInput(f"\nEnter a guess between 1 and {highestNum} ")
+        attempts += 1
+        if guess > num:
+            LBL("Too high")
+        elif guess < num:
+            LBL("Too low")
+        elif guess == num:
+            LBL("Correct!")
+            LBL(f"You took {attempts} attempts to guess a random number between 1 and {highestNum}")
+            correct = True
+    mainMenu()
+
+def mainMenu():
+    LBL("""Welcome to my number guessing game!
+Main Menu:
+P) Play
+I) Info
+Q) Quit\n""")
+    menu = LBLInput("Chose from options P, I or Q: ").upper()
+    if menu == "P":
+        numGuess()
+    elif menu == "I":
+        LBL("Not finished yet!")
+    elif menu == "Q":
         quitProgram()
+    mainMenu()
 
 # main code
-numGuess()
+mainMenu()
