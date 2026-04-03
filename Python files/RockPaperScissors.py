@@ -99,7 +99,7 @@ Main Menu:
 P) Play
 I) Info
 Q) Quit\n""")
-    menu = LBLInput("Chose from options P, I or Q: ")
+    menu = LBLInput("Chose from options P, I or Q: ").upper()
     if menu == "P":
         rps()
     elif menu == "I":
