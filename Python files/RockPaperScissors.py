@@ -52,8 +52,6 @@ def rps():
                 LBL("The computer chose scissors")
                 wait()
                 LBL("You won!")
-            case _:
-                errorPrint(2)
     # paper
     elif p1 == "2" or p1 == "p" or p1 == "paper":
         LBL("You chose paper")
@@ -73,8 +71,6 @@ def rps():
                 LBL("The computer chose scissors")
                 wait()
                 LBL("You lost!")
-            case _:
-                errorPrint(2)
     # scissors
     elif p1 == "3" or p1 == "s" or p1 == "scissors":
         LBL("You chose scissors")
@@ -94,10 +90,6 @@ def rps():
                 LBL("The computer chose scissors")
                 wait()
                 LBL("You drew!")
-            case _:
-                errorPrint(2)
-    else:
-        errorPrint(3)
     
     print()
     runAgain()
