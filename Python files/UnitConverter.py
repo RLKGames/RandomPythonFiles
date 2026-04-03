@@ -54,10 +54,10 @@ Convert from:
     11) Yard (Not finished)
     12) Mile (Not finished)
     13) Nautical mile (Not finished)
-    14) Back to main menu
-    15) Quit
+    M) Back to main menu
+    Q) Quit
     """)
-    lengthMenu = LBLIntInput("Chose from options 1 - 15: ")
+    lengthMenu = LBLInput("Chose from options 1 - 15: ")
     if lengthMenu == 1:
         convertLengthPicometre()
     elif lengthMenu == 2:

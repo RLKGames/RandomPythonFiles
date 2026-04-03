@@ -36,6 +36,7 @@ def counter():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     count = 0
     increment = ""
+    LBL("Welcome to my counter! ")
     while increment == "":
         increment = input("Press enter to increment counter, type anything to finish ")
         if increment == "":

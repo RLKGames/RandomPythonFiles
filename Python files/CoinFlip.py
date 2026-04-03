@@ -44,7 +44,7 @@ def printToFile(dateTimeNow, output):
 # coin
 def coinFlip():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-    LBL("Welcome to coin flipper!")
+    LBL("Welcome to my coin flipper!")
     diceCount = LBLIntInput("How many coins should be flipped? ")
     count = 0
     heads = 0
