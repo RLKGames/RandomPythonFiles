@@ -55,7 +55,7 @@ def convertLength():
 I) Info
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-13, I, M or Q: ")
+    menu = LBLInput("Chose from options 1-13, I, M or Q: ").upper()
     if menu == "1":
         convertLengthPicometre()
     elif menu == "2":
@@ -114,7 +114,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of picometres: ")
     if menu == "1":
         LBL(f"{inputUnit} picometres = {inputUnit/1000:.3f} nanometres")
@@ -169,7 +169,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of nanometres: ")
     if menu == "1":
         LBL(f"{inputUnit} nanometres = {inputUnit*1000:.3f} picometres")
@@ -205,7 +205,7 @@ Q) Quit\n""")
         quitProgram()
     convertLengthNanometre()
 
-    # Length Converter - Micrometre
+# Length Converter - Micrometre
 def convertLengthMicrometre():
     LBL("""\nConvert to:
 1) Picometre
@@ -224,7 +224,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of micrometres: ")
     if menu == "1":
         LBL(f"{inputUnit} micrometres = {inputUnit*1000000:.3f} picometres")
@@ -260,7 +260,7 @@ Q) Quit\n""")
         quitProgram()
     convertLengthMicrometre()
 
-    # Length Converter - Millimetre
+# Length Converter - Millimetre
 def convertLengthMillimetre():
     LBL("""\nConvert to:
 1) Picometre
@@ -279,7 +279,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of millimetres: ")
     if menu == "1":
         LBL(f"{inputUnit} millimetres = {inputUnit*1000000000:.3f} picometres")
@@ -315,7 +315,7 @@ Q) Quit\n""")
         quitProgram()
     convertLengthMillimetre()
 
-    # Length Converter - Centimetre
+# Length Converter - Centimetre
 def convertLengthCentimetre():
     LBL("""\nConvert to:
 1) Picometre
@@ -334,7 +334,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of centimetres: ")
     if menu == "1":
         LBL(f"{inputUnit} centimetres = {inputUnit*10000000000:.3f} picometres")
@@ -370,7 +370,7 @@ Q) Quit\n""")
         quitProgram()
     convertLengthCentimetre()
 
-    # Length Converter - Decimetre
+# Length Converter - Decimetre
 def convertLengthDecimetre():
     LBL("""\nConvert to:
 1) Picometre
@@ -389,7 +389,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of decimetres: ")
     if menu == "1":
         LBL(f"{inputUnit} decimetres = {inputUnit*100000000000:.3} picometres")
@@ -425,7 +425,7 @@ Q) Quit\n""")
         quitProgram()
     convertLengthDecimetre()
 
-    # Length Converter - Metre
+# Length Converter - Metre
 def convertLengthMetre():
     LBL("""\nConvert to:
 1) Picometre
@@ -444,7 +444,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of metres: ")
     if menu == "1":
         LBL(f"{inputUnit} metres = {inputUnit*1000000000000:.3f} picometres")
@@ -480,7 +480,7 @@ Q) Quit\n""")
         quitProgram()
     convertLengthMetre()
 
-    # Length Converter - Kilometre
+# Length Converter - Kilometre
 def convertLengthKilometre():
     LBL("""\nConvert to:
 1) Picometre
@@ -499,7 +499,7 @@ I) Info
 L) Back to length converter
 M) Back to main menu
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ")
+    menu = LBLInput("Chose from options 1-12, I, L, M or Q: ").upper()
     inputUnit = LBLFloatInput("Enter the number of kilometres: ")
     if menu == "1":
         LBL(f"{inputUnit} kilometres = {inputUnit*1000000000000000:.3f} picometres")
@@ -557,7 +557,7 @@ Main menu:
 11) Temperature (Not finished)
 I) Info
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-11, I or Q: ")
+    menu = LBLInput("Chose from options 1-11, I or Q: ").upper()
     if menu == "1":
         convertLength()
     elif menu == "2":
