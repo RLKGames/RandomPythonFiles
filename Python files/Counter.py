@@ -2,6 +2,8 @@ import sys
 import time
 import datetime
 
+outputList = []
+
 # one by one character printer
 def LBL(printInput):
     for x in str(printInput):
@@ -21,38 +23,48 @@ def LBLInput(printInput):
 
 # quit program
 def quitProgram():
-    LBL("\nQuitting")
+    LBL("\nQuitting program!")
     quit()
 
-# print output to file
-def printToFile(dateTimeNow, output):
+# print output
+def printOutput(output):
     print(output)
-    filePath = f"incrementalCounterOutput-{dateTimeNow}.txt"
+    outputList.append(output)
+
+# print output to file
+def printToFile(dateTimeNow):
+    filePath = f"CounterOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(f"{output}\n")
+        f.write(outputList)
 
 # main menu
 def counter():
     dateTimeNow = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     count = 0
     increment = ""
-    LBL("Welcome to my counter! ")
     while increment == "":
         increment = input("Press enter to increment counter, type anything to finish ")
         if increment == "":
             count += 1
-            print(f"Counter: {count}")
-    printToFile(dateTimeNow, f"Final counter: {count}\n")
-    runAgain()
+            printOutput(f"Counter: {count}")
+    printOutput(f"Final counter: {count}")
+    printToFile(dateTimeNow)
+    mainMenu()
 
-# run again prompt
-def runAgain():
-    runAgainQ = LBLInput("Would you like to run the counter again? ")
-    if runAgainQ == "y" or runAgainQ == "yes" or runAgainQ == "yep" or runAgainQ == "yeah":
-        print()
+def mainMenu():
+    LBL("""Welcome to my counter!
+Main Menu:
+P) Play
+I) Info
+Q) Quit\n""")
+    menu = LBLInput("Chose from options P, I or Q: ").upper()
+    if menu == "P":
         counter()
-    else:
+    elif menu == "I":
+        LBL("Not finished yet!")
+    elif menu == "Q":
         quitProgram()
+    mainMenu()
 
 # main code
-counter()
+mainMenu()
