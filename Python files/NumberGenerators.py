@@ -3,6 +3,7 @@ import random
 import sys
 import time
 import math
+import time
 
 outputList = []
 
@@ -156,6 +157,7 @@ def quitProgram():
 
 # main menu
 def mainMenu():
+    print("\n\n")
     LBL("""Welcome to number generator!
 Main Menu:
 1) Prime number generator
@@ -180,6 +182,8 @@ Q) Quit\n""")
         LBL("Not finished yet!")
     elif menu == "Q":
         quitProgram()
+    
+    time.sleep(3)
     mainMenu()
 
 # main code
