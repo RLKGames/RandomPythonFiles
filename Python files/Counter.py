@@ -35,7 +35,7 @@ def printOutput(output):
 def printToFile(dateTimeNow):
     filePath = f"CounterOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(outputList)
+        f.write(f"{outputList}")
 
 # main menu
 def counter():

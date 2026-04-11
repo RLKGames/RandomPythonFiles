@@ -45,7 +45,7 @@ def printOutput(output):
 def printToFile(dateTimeNow):
     filePath = f"DiceRollOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
-        f.write(outputList)
+        f.write(f"{outputList}")
 
 # dice roller
 def diceRoll():
