@@ -167,7 +167,7 @@ Main Menu:
 5) Random number generator
 I) Info
 Q) Quit\n""")
-    menu = LBLInput("Chose from options 1-5, I or Q: ").lower()
+    menu = LBLInput("Chose from options 1-5, I or Q: ").upper()
     if menu == "1":
         primeNumberGen()
     elif menu == "2":
