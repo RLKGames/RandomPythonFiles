@@ -52,6 +52,8 @@ def printToFile(dateTimeNow, generator):
         case "random":
             filePath = f"RandomNumGenOutput-{dateTimeNow}.txt"
     with open(filePath, "a") as f:
+        # outputList.remove("[")
+        # outputList.remove("]")
         f.write(f"{outputList}")
 
 # prime number generator
@@ -62,20 +64,25 @@ def primeNumberGen():
     highestNum = LBLIntInput("What is the highest number you would like to check? ")
     num = 0
     startTime = time.perf_counter()
-    if lowestNum <= 2 and highestNum >= 2:
-        num += 1
-        printOutput("2 is prime")
-    if lowestNum <= 3 and highestNum >= 3:
-        num += 1
-        printOutput("3 is prime")
-    for numChecking in range(max(5, lowestNum if lowestNum % 2 != 0 else lowestNum + 1), highestNum + 1, 2):
-        factorCount = 0
-        for numAgainst in range(2, int(math.sqrt(numChecking+1)+2)):
-            if numChecking % numAgainst == 0:
-                factorCount += 1
-        if factorCount == 2:
+
+    for numChecking in range(lowestNum, highestNum):
+        if numChecking == 2:
             num += 1
-            printOutput(f"{numChecking} is prime")
+            printOutput("2 is prime")
+        elif numChecking == 5:
+            num += 1
+            printOutput("5 is prime")
+        elif numChecking % 2 != 0 and numChecking % 5 != 0:
+            factorCount = 2
+            sqrtNum = math.sqrt(numChecking)
+            for numAgainst in range(2, int(sqrtNum)):
+                if numChecking % numAgainst == 0:
+                    factorCount += 1
+            if factorCount == 2:
+                if not sqrtNum.is_integer():
+                    num += 1
+                    printOutput(f"{numChecking} is prime")
+
     endTime = time.perf_counter()
     printOutput(f"{num} numbers have been generated\nTook: {endTime - startTime:.2f}s")
     printToFile(dateTimeNow, "prime")
